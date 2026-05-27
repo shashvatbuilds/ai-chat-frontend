@@ -26,7 +26,7 @@ function Chat() {
     const token = localStorage.getItem("token")
 
     const response = await fetch(
-      "http://127.0.0.1:8000/conversations",
+      "https://ai-chat-backend-zsqv.onrender.com/conversations",
       {
         headers: {
           Authorization: `Bearer ${token}`
@@ -48,7 +48,7 @@ function Chat() {
     const token = localStorage.getItem("token")
 
     const response = await fetch(
-      "http://127.0.0.1:8000/conversations",
+      "https://ai-chat-backend-zsqv.onrender.com/conversations",
       {
         method: "POST",
         headers: {
@@ -72,7 +72,7 @@ function Chat() {
     const token = localStorage.getItem("token")
 
     const response = await fetch(
-      `http://127.0.0.1:8000/conversations/${conversationId}`,
+      `https://ai-chat-backend-zsqv.onrender.com/conversations/${conversationId}`,
       {
         method: "PUT",
         headers: {
@@ -100,7 +100,7 @@ function Chat() {
     const token = localStorage.getItem("token")
 
     await fetch(
-      `http://127.0.0.1:8000/conversations/${id}`,
+      `https://ai-chat-backend-zsqv.onrender.com/conversations/${id}`,
       {
         method: "DELETE",
         headers: {
@@ -130,7 +130,7 @@ function Chat() {
     const token = localStorage.getItem("token")
 
     const response = await fetch(
-      `http://127.0.0.1:8000/messages/${id}`,
+      `https://ai-chat-backend-zsqv.onrender.com/messages/${id}`,
       {
         headers: {
           Authorization: `Bearer ${token}`
@@ -179,7 +179,7 @@ function Chat() {
       const token = localStorage.getItem("token")
 
       const response = await fetch(
-        "http://127.0.0.1:8000/chat/",
+        "https://ai-chat-backend-zsqv.onrender.com/chat/",
         {
           method: "POST",
           headers: {
