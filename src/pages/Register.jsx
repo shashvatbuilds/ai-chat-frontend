@@ -34,8 +34,6 @@ function Register() {
 
       const data = await response.json()
 
-      console.log(data)
-
       if (response.ok) {
 
         alert("Registration Successful")
@@ -60,16 +58,24 @@ function Register() {
 
   return (
 
-    <div className="h-screen bg-zinc-950 flex items-center justify-center">
+    <div className="h-screen bg-zinc-950 flex items-center justify-center px-4">
 
       <form
         onSubmit={handleRegister}
-        className="bg-zinc-900 p-10 rounded-2xl w-[400px] space-y-5"
+        className="bg-zinc-900 p-10 rounded-2xl w-full max-w-[400px] space-y-5"
       >
 
-        <h1 className="text-white text-3xl font-bold text-center">
-          Register
-        </h1>
+        <div className="text-center">
+
+          <h1 className="text-white text-4xl font-bold mb-2">
+            Create Account
+          </h1>
+
+          <p className="text-zinc-400">
+            Start chatting with Eternal Chat
+          </p>
+
+        </div>
 
         <input
           type="text"
@@ -97,10 +103,23 @@ function Register() {
 
         <button
           type="submit"
-          className="w-full bg-white text-black p-3 rounded-lg font-bold cursor-pointer"
+          className="w-full bg-white text-black p-3 rounded-lg font-bold cursor-pointer hover:bg-zinc-200 transition"
         >
           Register
         </button>
+
+        <p className="text-zinc-400 text-center">
+
+          Already have an account?{" "}
+
+          <span
+            onClick={() => navigate("/login")}
+            className="text-white cursor-pointer font-bold hover:underline"
+          >
+            Login
+          </span>
+
+        </p>
 
       </form>
 

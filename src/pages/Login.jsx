@@ -34,16 +34,12 @@ function Login() {
 
       const data = await response.json()
 
-      console.log(data)
-
       if (response.ok) {
 
         localStorage.setItem(
           "token",
           data.access_token
         )
-
-        alert("Login Successful")
 
         navigate("/chat")
 
@@ -65,16 +61,24 @@ function Login() {
 
   return (
 
-    <div className="h-screen bg-zinc-950 flex items-center justify-center">
+    <div className="h-screen bg-zinc-950 flex items-center justify-center px-4">
 
       <form
         onSubmit={handleLogin}
-        className="bg-zinc-900 p-10 rounded-2xl w-[400px] space-y-5"
+        className="bg-zinc-900 p-10 rounded-2xl w-full max-w-[400px] space-y-5"
       >
 
-        <h1 className="text-white text-3xl font-bold text-center">
-          Login
-        </h1>
+        <div className="text-center">
+
+          <h1 className="text-white text-4xl font-bold mb-2">
+            Welcome Back
+          </h1>
+
+          <p className="text-zinc-400">
+            Login to continue chatting
+          </p>
+
+        </div>
 
         <input
           type="email"
@@ -94,10 +98,23 @@ function Login() {
 
         <button
           type="submit"
-          className="w-full bg-white text-black p-3 rounded-lg font-bold cursor-pointer"
+          className="w-full bg-white text-black p-3 rounded-lg font-bold cursor-pointer hover:bg-zinc-200 transition"
         >
           Login
         </button>
+
+        <p className="text-zinc-400 text-center">
+
+          Don't have an account?{" "}
+
+          <span
+            onClick={() => navigate("/register")}
+            className="text-white cursor-pointer font-bold hover:underline"
+          >
+            Register
+          </span>
+
+        </p>
 
       </form>
 
